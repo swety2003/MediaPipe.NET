@@ -96,7 +96,7 @@ namespace Mediapipe.Net.Framework
                     return Status.StatusArgs.Internal(e.ToString());
                 }
             };
-            callbackHandle = GCHandle.Alloc(nativePacketCallback, GCHandleType.Pinned);
+            callbackHandle = GCHandle.Alloc(nativePacketCallback, GCHandleType.Normal);
 
             return ObserveOutputStream(streamName, 0, nativePacketCallback, observeTimestampBounds);
         }
